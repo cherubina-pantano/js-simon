@@ -21,7 +21,7 @@ $(document).ready( function () {
     }
   }
 
-  console.log('Numeri da ricordare: ' + listNum);
+  // console.log('Numeri da ricordare: ' + listNum);
   alert('Memorizza questi cinque numeri: \n' + listNum);
 
   // intervallo 30 secondi
@@ -41,9 +41,8 @@ $(document).ready( function () {
 
     }
   }
-   ;
 
-   console.log('I numeri che ricordi sono: ' + listUserNum);
+  console.log('I numeri che ricordi sono: ' + listUserNum);
    var control = [];
 
    for (var i  = 0; i < listUserNum.length; i++) {
@@ -56,15 +55,23 @@ $(document).ready( function () {
     if (control.length == 0) {
       console.log('Hai perso! Non hai ricordato nessun numero!');
       alert('Hai perso! Non hai ricordato nessun numero!')
+      alert('I numeri che hai indovinato sono: ' + control);
+
     }
     else if (control.length == 5) {
       console.log('Hai vinto! Hai indovinato tutti i numeri!');
       alert('Hai vinto! Hai indovinato tutti i numeri!');
+      alert('I numeri che hai indovinato sono: ' + control);
+
     }
     else {
       console.log('Peccato! Hai indovitato solo: ' + control.length + ' su ' + size);
-      alert('Peccato! Hai indovitato solo: ' + control.length + ' su ' + size);
+      alert('Peccato! Hai indovitato solo: ' + control.length + ' numeri ' + ' su ' + size);
+      alert('I numeri che hai indovinato sono: ' + control);
+
     }
+
+    // alert('I numeri che hai indovinato sono: ' + control);
 
   }, 30000);
 
