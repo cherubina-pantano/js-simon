@@ -7,6 +7,7 @@ Una volta inseriti i 5 numeri, il software dice quanti e quali numeri sono stati
 */
 
 $(document).ready( function () {
+
   var listNum = [];
   var size = 5;
 
@@ -21,12 +22,22 @@ $(document).ready( function () {
   alert('Memorizza questi cinque numeri: \n' + listNum);
 
   // intervallo 30 secondi
-
   setTimeout(function() {
 
-    
-    console.log('Prova time');
-    alert("Prova");
+    // numeri che inserisce l'utente
+   var userNum;
+   var listUserNum = [];
+
+   while (listUserNum.length < size) {
+     userNum = parseInt(prompt('Inserisci un numero della lista che hai visto'));
+     console.log(userNum);
+
+      if (! listUserNum.includes(userNum)) {
+        listUserNum.push(userNum);
+    }
+  }
+
+   console.log('I numeri che ricordi sono: ' + listUserNum);
 
   }, 2000);
 
