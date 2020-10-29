@@ -16,8 +16,11 @@ $(document).ready( function () {
 
     if (! listNum.includes(number)) {
       listNum.push(number);
+
+
     }
   }
+
   console.log('Numeri da ricordare: ' + listNum);
   alert('Memorizza questi cinque numeri: \n' + listNum);
 
@@ -28,22 +31,42 @@ $(document).ready( function () {
    var userNum;
    var listUserNum = [];
 
+
    while (listUserNum.length < size) {
-     userNum = parseInt(prompt('Inserisci un numero della lista che hai visto'));
+     userNum = parseInt(prompt('Inserisci un numero della lista che hai visto').trim() );
      console.log(userNum);
 
       if (! listUserNum.includes(userNum)) {
         listUserNum.push(userNum);
+
     }
   }
+   ;
 
    console.log('I numeri che ricordi sono: ' + listUserNum);
+   var control = [];
 
-  }, 2000);
+   for (var i  = 0; i < listUserNum.length; i++) {
 
+      if (listNum.includes(listUserNum[i]) ) {
+        control.push(listUserNum[i]);
+      }
+    }
 
+    if (control.length == 0) {
+      console.log('Hai perso! Non hai ricordato nessun numero!');
+      alert('Hai perso! Non hai ricordato nessun numero!')
+    }
+    else if (control.length == 5) {
+      console.log('Hai vinto! Hai indovinato tutti i numeri!');
+      alert('Hai vinto! Hai indovinato tutti i numeri!');
+    }
+    else {
+      console.log('Peccato! Hai indovitato solo: ' + control.length + ' su ' + size);
+      alert('Peccato! Hai indovitato solo: ' + control.length + ' su ' + size);
+    }
 
-
+  }, 30000);
 
 });
 
